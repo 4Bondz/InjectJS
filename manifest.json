@@ -1,0 +1,48 @@
+{
+	"manifest_version": 2,
+	"name": "InjectJS",
+	"description": "InjectingJS into webpages since 2021",
+	"version": "1.0",
+	"background": {
+		"scripts": [
+			"background.js",
+			"camel-camel-camel-background.js"
+		]
+	},
+	"permissions": [
+		"tabs",
+		"webRequest",
+		"contextMenus",
+		"notifications"
+	],
+	"icons": {
+		"16": "icon.png"
+	},
+	"browser_action": {},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://*.youtube.com/*"
+			],
+			"js": [
+				"inject-youtube.js"
+			]
+		},
+		{
+			"matches": [
+				"https://*.amazon.com/*"
+			],
+			"js": [
+				"inject-amazon.js"
+			]
+		},
+		{
+			"matches": [
+				"https://*.netflix.com/*"
+			],
+			"js": [
+				"inject-netflix.js"
+			]
+		}
+	]
+}
